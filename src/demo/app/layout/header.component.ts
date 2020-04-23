@@ -5,6 +5,8 @@ import antDesignTheme from '../../../ng-select/themes/ant.design.theme.scss';
 import defaultTheme from '../../../ng-select/themes/default.theme.scss';
 // @ts-ignore
 import materialTheme from '../../../ng-select/themes/material.theme.scss';
+// @ts-ignore
+import customTheme from '../custom-theme.scss';
 
 type langDir = 'ltr' | 'rtl';
 
@@ -35,6 +37,9 @@ type langDir = 'ltr' | 'rtl';
                         <button (click)="setTheme('Material theme')" class="dropdown-item btn-sm">Material theme
                         </button>
                         <button (click)="setTheme('Ant Design theme')" class="dropdown-item btn-sm">Ant Design theme
+                        </button>
+                        <button (click)="setTheme('Custom theme')" 
+                        class="dropdown-item btn-sm">Custom theme
                         </button>
                     </div>
                 </div>
@@ -87,8 +92,10 @@ export class LayoutHeaderComponent implements AfterViewInit {
             this.style.innerHTML = defaultTheme;
         } else if (this.theme === 'Material theme') {
             this.style.innerHTML = materialTheme;
-        } else {
+        } else if (this.theme === 'Ant Design theme') {
             this.style.innerHTML = antDesignTheme;
+        } else {
+            this.style.innerHTML = customTheme
         }
     }
 
